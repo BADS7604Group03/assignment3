@@ -1,4 +1,4 @@
-# assignment3
+# Assignment3 : Stock Prediction
 Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LSTM
 
 
@@ -9,6 +9,12 @@ Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LST
 
 
 # Data
+ข้อมูลที่ใช้ในการศึกษาเป็นข้อมูลราคาหุ้นบริษัท บางกอก เชน ฮอสปิทอล จำกัด (มหาชน) หรือตัวย่อ BCH ซึ่งจดทะเบียนอยู่ในตลาดหลักทรัพย์แห่งประเทศไทยในหมวดธุรกิจการแพทย์ ข้อมูลที่ใช้ได้แก่ ราคาปิด ราคาเปิด ราคาสูงสุด ราคาต่ำสุด และปริมาณการซื้อขาย ซึ่งเป็นข้อมูลรายวัน ตั้งแต่วันที่ 9 กุมภาพันธ์ 2555 ถึงวันที่ 23 มีนาคม 2565 คิดเป็นจำนวนข้อมูลทั้งหมด 2,469 วัน แหล่งข้อมูลนำมาจาก Bloomberg ซึ่งเป็นผู้ให้บริการข้อมูลทางการเงินที่น่าเชื่อถือ โดยข้อมูลมีการปรับปรุงการเปลี่ยนแปลงของราคาพาร์ให้เป็นพาร์ปัจจุบัน ทำให้สามารถเปรียบเทียบราคาหุ้นในอดีตกับปัจจุบันได้ดียิ่งขึ้น
+โดยเมื่อนำข้อมูลราคาปิดของหุ้น BCH ในแต่ละวันมาสร้างกราฟดูพบว่าข้อมูลมีลักษณะมีแนวโน้ม(trend) และฤดูกาล(seasonal) ทางทีมจึงแก้ปัญหาดังกล่าวด้วยการใช้อัตราผลตอบแทนในการพยากรณ์แทนการใช้ราคาปิด แล้วนำผลตอบแทนที่ได้จากการพยากรณ์มาคำนวณราคมอีกครั้ง
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/87576892/160892971-b7cd7b35-9e4a-4d36-96cc-69606148db58.png">
+</p>
 
 
 # Training Strategy
@@ -29,15 +35,11 @@ Section3: จะทำการคำนวนค่า MSE และ MAE ขอ
 
 
 # Result 
-
+จากการเปรียบเทียบผลการการพยากรณ์ราคาหุ้น BCH ในเวลา t+21 ของโมเดลทั้ง 7 ตัวพบว่าโมเดลที่ให้ผลพยาการณ์ดีที่สุดคือ **RNN แบบ Encoder-Decoder โดยมี MSE - 0.611 และ MAE - 0.614** และโมเดลที่ได้ผลดีรองลงมาคือโมเดล **CNN+LSTM ที่มี MSE - 0.995 และ MAE - 0.804** ในขณะที่โมเดลที่เหลือจะมีผลแย่กว่าการใช้ moving average ในการพยาการณ์ รายละเอียดเพิ่มเติมตามรูปภาพด้านล่างนี้
  <p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/87576892/160893403-7ff64979-a089-4736-ac12-a4f977f24618.png">
   <img width="800" src="https://user-images.githubusercontent.com/87576892/160887534-8fe6fa7a-e3c4-483d-810b-87324c1ecdc5.png">
 </p>
-
- <p align="center">
-  <img width="800" src="https://user-images.githubusercontent.com/87576892/160887292-89e4dafe-4f7f-43c7-bc5f-da1b18a782c5.png">
-</p>
-
 
 # Network Architecture and Result
 ## Traditional ML - LightGBM 
@@ -59,14 +61,14 @@ CNN combined with LSTM write here --->
 
 # Member
 1) ณัฐภณ อัศวเหม 6310422052 (% contribution in this homework: 16.67%)
-<br>Train 
+<br>LSTM 
 2) ดวงธิดา แซ่แต้ 6310422056 (% contribution in this homework: 16.67%)
-<br>Train 
+<br>RNN Simple, DATA
 3) เมธี ประเสริฐกิจพันธุ์ 6310422053 (% contribution in this homework: 16.67%)
-<br>Train 
+<br>CNN combined with LSTM , Training Strategy  
 4) พีรพัทธ ตั้งไพบูลย 6310422024 (% contribution in this homework: 16.67%)
-<br>Train 
+<br>RNN Encoder-Decoder, Introduction
 5) วิชิต ชำนาญนาวา 6310422055 (% contribution in this homework: 16.67%)
-<br>Train 
+<br>GRU 
 6) ไตรทิพย์ ศุภศิริวัฒนา 6310422009 (% contribution in this homework: 16.67%)
-<br>Train  
+<br>LightGBM , Summary Training result  
