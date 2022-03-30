@@ -1,2 +1,2 @@
 # assignment3
-Sequence Data with RNN/LSTM/GRU
+Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LSTM
