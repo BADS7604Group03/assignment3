@@ -12,7 +12,20 @@ Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LST
 
 
 # Training Strategy
+ในส่วนของการทำ Training Strategy นั้น ทางทีมจะทำการแบ่งออกเป็นทั้งหมด 3 sections: Deep Learning Model, Traditional Model และ Traditional indicator โดยจะแบ่งรูปแบบของการเปรียบเทียบ result ดังนี้
 
+Section1: จะทำการคำนวนค่า MSE และ MAE ของแต่ละ models ของ deep learning: RNN Simple, LSTM, GRU, CNN+LSTM และ RNN Encoder-Decoder โดยทางกลุ่มจะทำการแบ่ง train set, validation set และ test set เป็นดังนี้ 0.8,0.1,0.1 คามลำดับ จากนั้นจะนำมาทำการเปรียบเทียบกันและทำการเลือก model ที่ให้ค่า MSE และ MAE น้อยสุดมา
+
+Section2: จะทำการคำนวนค่า MSE และ MAE ของ traditional model: LGBM
+
+Section3: จะทำการคำนวนค่า MSE และ MAE ของ basic indicator: Moving Average
+
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/160892555-e92f90e2-a453-4dcc-946c-0863f687de53.png">
+</p>
+
+ซึ่งหลังจากที่ทางทีมได้ the best model จาก section1 มานั้น จะนำมาทำการเปรียบเทียบกับ result ที่ได้จาก Section2 และ Section3 เพื่อที่จะได้ทำการ compare ว่า result ที่ได้จากการ run deep learning model มี performance ที่ดีกว่าตัว traditional model หรือ basic indicator ไหม
 
 
 # Result 
