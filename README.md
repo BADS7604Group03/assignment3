@@ -15,7 +15,15 @@ Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LST
 
 
 
-# Result
+# Result 
+
+ <p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/87576892/160887534-8fe6fa7a-e3c4-483d-810b-87324c1ecdc5.png">
+</p>
+
+ <p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/87576892/160887292-89e4dafe-4f7f-43c7-bc5f-da1b18a782c5.png">
+</p>
 
 
 # Network Architecture and Result
