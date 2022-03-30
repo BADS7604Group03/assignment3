@@ -18,11 +18,23 @@ Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LST
 # Result
 
 
-# Network Architecture and result
+# Network Architecture and Result
+## Traditional ML - LightGBM 
+ ทางทีมได้เลือก LightGBM เนื่องจากเป็นโมเดลที่มีความเร็ว และมีประสิทธิ์ภาพที่สูง จากการใช้ Gradient Boosting หรือ เทคนิคการเรียนรู้ที่จะสร้างโมเดลที่มีความแม่นยำสูง โดยเรียนรู้จากค่าความคลาดเครลื่อนสะสมที่เกิดจากการทำนายของโมเดลที่สร้างก่อนหน้า โดยทางทีมได้กำหนด parameter ต่างๆ ไว้ดังนี้ { 'boosting_type': 'gbdt',  'objective': 'regression', 'metric':'l2', 'num_leaves':10, 'max_depth':5, 'drop_rate ':0.3,  'reg_sqrt':True,  'boost_from_average':True,  'learning_rate': 0.0001, 'verbose': 0, } และตั้งค่าในการ train ไว้เป็น num_boost_round=1000,  early_stopping_rounds=100, verbose_eval=50 เมื่อนำโมเดลที่ Train เสร็จเรียบร้อยแล้วมาทดสอบกับข้อมูล test set (ข้อมูลแยกไว้เพื่อทดสอบโมเดลในตอนสุดท้าย) ได้ผล Mean Squared Error (MSE) : 0.207 และ Mean Absolute Error : 0.335 
+![image](https://user-images.githubusercontent.com/87576892/160876781-285c2681-db7c-476d-87b1-f771f6b692e8.png)
 
+## RNN Simple
+RNN write here ---> 
+## LSTM
+LSTM write here ---> 
+## GRU
+GRU write here ---> 
+## RNN Encoder-Decoder
+RNN Encoder-Decoder write here ---> 
+## CNN combined with LSTM
+CNN combined with LSTM write here ---> 
 
 # Referance
-
 
 # Member
 1) ณัฐภณ อัศวเหม 6310422052 (% contribution in this homework: 16.67%)
