@@ -53,7 +53,10 @@ LSTM write here --->
 ## GRU
 GRU write here ---> 
 ## RNN Encoder-Decoder
-RNN Encoder-Decoder write here ---> 
+  อีกหนึ่งโมเดลที่ทางกลุ่มเลือกนำมาทดลองคือ RNN Encoder-Decoder architecture เพื่อช่วยแก้ปัญหาจากการใช้แค่ Simple RNN network เนื่องจากการที่ input เป็น sequence และ output เป็น sequence เป็นงานที่ซับซ้อนเกินไปสำหรับแค่ Simple RNN network การใช้ Encoder-Decoder ตัวโมเดลจะถูกแบ่งออกเป็น 2 ส่วนช่วยกันทำงานคือส่วน Encoder ที่รับ input เป็น sequence และส่วน Decoder ที่จะให้ output ออกมาเป็น sequence เช่นกัน ทำให้สามารถทำงานได้ดีกว่า ซึ่งการตั้งค่า parameter ในการทดลองครั้งนี้ กำหนดจำนวน cells สำหรับ encoder และ decoder โมเดลไว้เท่ากับ 20 และเพิ่ม dropout ในส่วน decoder โมเดลเท่ากับ 0.3 ซึ่งเมื่อนำโมเดลที่ train เสร็จเรียบร้อยแล้วมาทดลองทำนายราคาของหุ้น BCH (ในส่วนของ test set) พบว่าได้ผล Mean Squared Error (MSE) : 0.6113 และ Mean Absolute Error : 0.6136
+  ![image](https://user-images.githubusercontent.com/87868128/160894484-1acac958-c2d6-48af-9630-b5f438488eb2.png)
+  ![image](https://user-images.githubusercontent.com/87868128/160894745-0eacd64a-ee50-4de0-87b8-9851ede145f1.png)
+
 ## CNN combined with LSTM
 CNN combined with LSTM write here ---> 
 
