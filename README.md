@@ -73,7 +73,7 @@ GRU write here --->
 ซึ่งเมื่อนำโมเดลที่ train เสร็จเรียบร้อยแล้วมาทดลองทำนายราคาของหุ้น BCH (ในส่วนของ test set) พบว่าได้ผล Mean Squared Error (MSE) : 0.9945 และ Mean Absolute Error : 0.8041
 
 <p align="center">
-  <img width="800" src="https://user-images.githubusercontent.com/71161635/160901894-bffb4d17-9970-49f9-9322-720464b03c29.png">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/160902211-252bd818-c752-426c-835f-3297d86994d5.png">
 </p>
 
 # Referance
