@@ -58,9 +58,26 @@ GRU write here --->
   ![image](https://user-images.githubusercontent.com/87868128/160894745-0eacd64a-ee50-4de0-87b8-9851ede145f1.png)
 
 ## CNN combined with LSTM
-CNN combined with LSTM write here ---> 
+ทางทีมได้นำความรู้ที่ได้จากการอ่าน paper ของ Eapen, J., Bein, D., & Verma, A. (2019). Novel deep learning model with cnn and bi-directional lstm for improved stock market index prediction. In 2019 IEEE 9th Annual Computing and Communication Workshop and Conference มาทำการประยุกต์ใช้โดยนำ CNN มา combine รวมกันกับ bi-directional LSTM เพื่อที่จะพัฒนาผลลัพธ์ของการทำนาย return ของ BCH ให้มีความแม่นยำยิ่งขึ้นกว่าการใช้ LSTM โดยทางทีมได้ทำการใช้ 1D Convolutional layer ทั้งหมด 3 layers โดยแต่ละตัวมี nodes ดังนี้ 128, 256 และ 512 nodes ตามลำดับ โดยในแต่ละ 1D convolutional layer นั้นจะตามด้วย max pooling layer ซึ่งตัว output จะทำการ fatten ก่อนที่จะ feed เข้าสู่ bi-directional LSTM โดยในแต่ละ layer ของ  bi-directional LSTM  จะทำการเพิ่ม dropout เท่ากับ 0.3 ดังตัวอย่าง ดังรูปด้านล่าง
+
+
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/160901701-8768968d-4e12-4079-9a98-28858a1e584f.png">
+</p>
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/160901760-ca503c19-c131-4970-9be7-a16a2e18a9ce.png">
+</p>
+
+ซึ่งเมื่อนำโมเดลที่ train เสร็จเรียบร้อยแล้วมาทดลองทำนายราคาของหุ้น BCH (ในส่วนของ test set) พบว่าได้ผล Mean Squared Error (MSE) : 0.9945 และ Mean Absolute Error : 0.8041
+
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/71161635/160901894-bffb4d17-9970-49f9-9322-720464b03c29.png">
+</p>
 
 # Referance
+[1] Eapen, J., Bein, D., & Verma, A. (2019). Novel deep learning model with cnn and bi-directional lstm for improved stock market index prediction. In 2019 IEEE 9th Annual Computing and Communication Workshop and Conference (CCWC) (pp. 0264{0270). doi:10.1109/CCWC.2019.8666592.
 
 # Member
 1) ณัฐภณ อัศวเหม 6310422052 (% contribution in this homework: 16.67%)
