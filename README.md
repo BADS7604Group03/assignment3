@@ -142,7 +142,7 @@ batch size 64 ,ข้อมูลราคา/return ที่ใช้ในก
 
 # Member
 1) ณัฐภณ อัศวเหม 6310422052 (% contribution in this homework: 16.67%)
-<br>LSTM 
+<br>LSTM , Highlight
 2) ดวงธิดา แซ่แต้ 6310422056 (% contribution in this homework: 16.67%)
 <br>RNN Simple, DATA
 3) เมธี ประเสริฐกิจพันธุ์ 6310422053 (% contribution in this homework: 16.67%)
