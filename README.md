@@ -52,7 +52,25 @@ Section3: จะทำการคำนวนค่า MSE และ MAE ขอ
 ![image](https://user-images.githubusercontent.com/87576892/160876781-285c2681-db7c-476d-87b1-f771f6b692e8.png)
 
 ## RNN Simple
-RNN write here ---> 
+โมเดลถัดมาที่ทางทีมเลือกมาทดลองคือ Simple Recurrent Neural Network (RNN Simple) ซึ่งเป็น Network ที่นำ Output จาก State ที่แล้วมาร่วมเป็น Input ด้วย ซึ่งการทำงานจะคล้ายกับการทำงานเป็น Loop เหมือนกับ Neural Network ธรรมดาที่มีหลายๆ ตัว โดยมี Output ต่อกันเป็น Input เข้า Network ใหม่ และเนื่องจาก RNN ใช้ข้อมูลจาก Network ก่อนๆ ทำให้สามารถทำงานได้ดีในข้อมูลแบบ Time Series ซึ่งเหมาะสมกับข้อมูลราคาหุ้น BCH ที่นำมาใช้
+
+
+![image](https://user-images.githubusercontent.com/71161635/161076262-624a63c3-1cfa-438f-96d3-b25de3e2b6e8.png)
+
+
+จากการรันโมเดล RNN Simple พบว่าค่า MSE = 1.7033 และค่า MAE = 1.0598 และมีเส้นพยากรณ์ตามรูปด้านล่าง ซึ่งจากกราฟจะพบว่าโมเดลสามารถทำนายราคาหุ้น BCH ได้ค่อนข้างแม่นยำในช่วงราคาที่มีแนวโน้มขาลง แต่ในขณะที่ราคามีแนวโน้มขึ้น โมเดลจะมีความแม่นยำต่ำลง 
+
+
+![image](https://user-images.githubusercontent.com/71161635/161076417-bbe19ec0-64ae-4a6a-8957-26a4acb001ba.png)
+
+
+![image](https://user-images.githubusercontent.com/71161635/161076431-46323353-d9d4-4b09-af66-f5c750e7d109.png)
+
+
+![image](https://user-images.githubusercontent.com/71161635/161076456-3e3275fb-4f1a-4337-ae82-c5fa4764d6c5.png)
+
+
+
 ## LSTM
 เราได้นำ LSTM มาทดลองใช้กับการพยากรณ์ราคาหุ้น BCH โดยใช้ ราคาปิดมาใช้ในการพยากรณ์ โดยเราได้นำราคาปิด รายวันของหุ้นดังกล่าว มาหาผลตอบแทนรายวันเพื่อให้ข้อมูลมีความ Stationary จากนั้นจึงนำข้อมูลมาทำการ Scaling โดยเราได้เลือกการใช้ StandardScaler ในการแปลงข้อมูล ก่อนที่จะนำข้อมูลนั้นเข้าไป Train ในตัวของโมเดล โดยมี Architecture ของตัวโมเดล ดังนี้
  ![lstm-1](https://user-images.githubusercontent.com/98243238/160967748-d7ab47eb-4c03-4199-872c-2ef79f7ab1fe.JPG)
