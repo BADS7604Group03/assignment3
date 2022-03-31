@@ -70,7 +70,10 @@ Gated Recurrent Unit (GRU) เป็น Recurrent Neural Network (RNN) แบบ
 
 ![image](https://user-images.githubusercontent.com/83268624/160988210-6239bb5b-5625-4d45-b5d7-077c164c6a52.png)
 
+
 Picture Credit: https://en.m.wikipedia.org/wiki/File:Gated_Recurrent_Unit.svg
+
+
 Ref: https://www.bualabs.com/archives/3103/what-is-rnn-recurrent-neural-network-what-is-gru-gated-recurrent-unit-teach-how-to-build-rnn-gru-with-python-nlp
 
       การที่ GRU มีความเร็วที่มากกว่าLSTM เพราะมีการตัด input และ output gate ออกและเปลี่ยนมาใช้ reset gate และ update gate 
