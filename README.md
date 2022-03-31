@@ -3,9 +3,9 @@ Sequence Data with RNN Simple/RNN Encoder-Decoder/LSTM/GRU/CNN combined with LST
 
 
 # Highlight
-Pretrained Model ทางกลุ่มได้เเบ่งข้อมูลเป็น Train 80%, Validation 10%, Test 10% โดยการ Train ข้อมูลนั้น ทางกลุ่มได้นำราคาปิดของหุ้นที่เลือกในเเต่ละวัน มาเเปลงเป็น daily return(% Change) เพื่อทำให้ข้อมูลมีความเป็น Stationary
-ทุก Model ทางกลุ่มได้ทำการ Train โมเดล เพื่อวัตถุประสงค์ให้ได้ผลลัพท์ในการทำนายราคาหุ้นสูงที่สุด โดยใช้ Mean Squared Error เเละ Mean Absolute Error ในการประเมินความเเม่นยำ(ใช้ Test Period อยู่ที่ 244 วัน)
-หากต้องการนำไปพัฒนาต่อ ทางกลุ่มเเนะนำว่า เราสามารถใช้ ผลตอบเเทนในช่วงระยะเวลาอื่นๆ เช่น Weekly, Monthly เเละในส่วนของโมเดล เราพบว่าการใช้ CNN+LSTM Architecture หรือการประยุกต์ใช้ encoder-decoder นั้นให้ผลลัพท์ที่น่าพอใจ เเละสามารถนำไปต่อยอดได้
+-  Pretrained Model ทางกลุ่มได้เเบ่งข้อมูลเป็น Train 80%, Validation 10%, Test 10% โดยการ Train ข้อมูลนั้น ทางกลุ่มได้นำราคาปิดของหุ้นที่เลือกในเเต่ละวัน มาเเปลงเป็น daily return(% Change) เพื่อทำให้ข้อมูลมีความเป็น Stationary
+-  ทุก Model ทางกลุ่มได้ทำการ Train โมเดล เพื่อวัตถุประสงค์ให้ได้ผลลัพท์ในการทำนายราคาหุ้นสูงที่สุด โดยใช้ Mean Squared Error เเละ Mean Absolute Error ในการประเมินความเเม่นยำ(ใช้ Test Period อยู่ที่ 244 วัน)
+-  หากต้องการนำไปพัฒนาต่อ ทางกลุ่มเเนะนำว่า เราสามารถใช้ ผลตอบเเทนในช่วงระยะเวลาอื่นๆ เช่น Weekly, Monthly เเละในส่วนของโมเดล เราพบว่าการใช้ CNN+LSTM Architecture หรือการประยุกต์ใช้ encoder-decoder นั้นให้ผลลัพท์ที่น่าพอใจ เเละสามารถนำไปต่อยอดได้
 
 # Introduction
 
