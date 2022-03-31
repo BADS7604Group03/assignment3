@@ -62,7 +62,7 @@ RNN write here --->
 
 
 ## GRU
-     Gated Recurrent Unit (GRU) เป็น Recurrent Neural Network (RNN) แบบหนึ่ง ที่ออกแบบมาคล้ายๆ Long Short Term Memory (LSTM)  LSTM 
+Gated Recurrent Unit (GRU) เป็น Recurrent Neural Network (RNN) แบบหนึ่ง ที่ออกแบบมาคล้ายๆ Long Short Term Memory (LSTM)  LSTM 
 แต่จะช่วยแก้ปัญหาเรื่อVanishing Gradient / Exploding Gradient เพราะประสิทธิภาพของ RNN จะแย่ลงถ้าเจอกับ Sequence ยาว ๆ ทำให้มีการออกแบบ GRU ขึ้นมาแก้ปัญหาเหล่านี้
 โดยโครงสร้างของ GRU จะมีระบบปิดเปิดการอัพเดทสถานะภายใน RNN ที่คล้ายกับ (LSTM) ที่จะมี Forget Gate แต่มี Parameter น้อยกว่า LSTM 
 เนื่องจากไม่มี Output Gate GRU มีประสิทธิภาพใกล้เคียงกับ LSTM ในหลาย ๆ งาน แต่เนื่องจาก Parameter น้อยกว่าทำให้เทรนได้ง่ายกว่า 
