@@ -62,26 +62,35 @@ RNN write here --->
 
 
 ## GRU
-     Gated Recurrent Unit (GRU) เป็น Recurrent Neural Network (RNN) แบบหนึ่ง ที่ออกแบบมาคล้ายๆ Long Short Term Memory (LSTM)  LSTM แต่จะช่วยแก้ปัญหาเรื่อVanishing Gradient / Exploding Gradient เพราะประสิทธิภาพของ RNN จะแย่ลงถ้าเจอกับ Sequence ยาว ๆ ทำให้มีการออกแบบ GRU ขึ้นมาแก้ปัญหาเหล่านี้โดยโครงสร้างของ GRU จะมีระบบปิดเปิดการอัพเดทสถานะภายใน RNN ที่คล้ายกับ (LSTM) ที่จะมี Forget Gate แต่มี Parameter น้อยกว่า LSTM เนื่องจากไม่มี Output Gate GRU มีประสิทธิภาพใกล้เคียงกับ LSTM ในหลาย ๆ งาน แต่เนื่องจาก Parameter น้อยกว่าทำให้เทรนได้ง่ายกว่า เร็วกว่า และในบางงานที่ Data Set มีขนาดเล็ก พบว่า GRU ประสิทธิภาพดีกว่า
+     Gated Recurrent Unit (GRU) เป็น Recurrent Neural Network (RNN) แบบหนึ่ง ที่ออกแบบมาคล้ายๆ Long Short Term Memory (LSTM)  LSTM 
+แต่จะช่วยแก้ปัญหาเรื่อVanishing Gradient / Exploding Gradient เพราะประสิทธิภาพของ RNN จะแย่ลงถ้าเจอกับ Sequence ยาว ๆ ทำให้มีการออกแบบ GRU ขึ้นมาแก้ปัญหาเหล่านี้
+โดยโครงสร้างของ GRU จะมีระบบปิดเปิดการอัพเดทสถานะภายใน RNN ที่คล้ายกับ (LSTM) ที่จะมี Forget Gate แต่มี Parameter น้อยกว่า LSTM 
+เนื่องจากไม่มี Output Gate GRU มีประสิทธิภาพใกล้เคียงกับ LSTM ในหลาย ๆ งาน แต่เนื่องจาก Parameter น้อยกว่าทำให้เทรนได้ง่ายกว่า 
+เร็วกว่า และในบางงานที่ Data Set มีขนาดเล็ก พบว่า GRU ประสิทธิภาพดีกว่า
 
 ![image](https://user-images.githubusercontent.com/83268624/160988210-6239bb5b-5625-4d45-b5d7-077c164c6a52.png)
 
 Picture Credit: https://en.m.wikipedia.org/wiki/File:Gated_Recurrent_Unit.svg
 Ref: https://www.bualabs.com/archives/3103/what-is-rnn-recurrent-neural-network-what-is-gru-gated-recurrent-unit-teach-how-to-build-rnn-gru-with-python-nlp
 
-      การที่ GRU มีความเร็วที่มากกว่าLSTM เพราะมีการตัด input และ output gate ออกและเปลี่ยนมาใช้ reset gate และ update gate โดยที่ข้อมูล input เพื่อเข้ามาครั้งแรกจะทำการเก็บค่านั้นไว้แล้วจะตัดดสินใจว่าจะนำข้อมูลไปใช้ในใหม่ GRU หรือ แค่แสดงผล หากนำไปใช้จะเข้าส่งข้อมูลไปที่ reset gate เพื่อที่จะตัดสินใจว่าต้องลบข้อมูลไหน และเก็บข้อมูลก่อน (ธนดล สิงขรอาสน์ ,2564) ***
-*** วิทยานิพนธ์: การเรียนรู้เชิงลึกสำหรับการตรวจจับและรู้จำคำบรรยายในวีดิทัศน์ (ธนดล สิงขรอาสน์ ,2564)
+      การที่ GRU มีความเร็วที่มากกว่าLSTM เพราะมีการตัด input และ output gate ออกและเปลี่ยนมาใช้ reset gate และ update gate 
+      โดยที่ข้อมูล input เพื่อเข้ามาครั้งแรกจะทำการเก็บค่านั้นไว้แล้วจะตัดดสินใจว่าจะนำข้อมูลไปใช้ในใหม่ GRU หรือ แค่แสดงผล 
+      หากนำไปใช้จะเข้าส่งข้อมูลไปที่ reset gate เพื่อที่จะตัดสินใจว่าต้องลบข้อมูลไหน และเก็บข้อมูลก่อน (ธนดล สิงขรอาสน์ ,2564) ***
+      *** วิทยานิพนธ์: การเรียนรู้เชิงลึกสำหรับการตรวจจับและรู้จำคำบรรยายในวีดิทัศน์ (ธนดล สิงขรอาสน์ ,2564)
 
+ในที่นี้ทางทีมได้ออกแบบเปรียบเทียบค่าการพยากรหุ้นของโรงพยาบาล  BCH บริษัท บางกอก เชน ฮอสปิทอล จำกัด (มหาชน)ด้วยหลักการ GRU 
+ซึ่งเป็นหนึ่งในรูปแบบสถาปัตถรยกรรมของ RNN และโดยกำหนดให้มี parameter ที่เหมือนกันดังนี้ Learning rate ที่ 0.001  , epoch 30 epoch , 
+batch size 64 ,ข้อมูลราคา/return ที่ใช้ในการพยากรณ์ล่วงหน้า 20 วัน และ drop out ที่ 0.3 และ Optimizer เป็น Nadam 
+โดยแบ่งข้อมูลเป็น Trian 80 % Validation 10 % และข้อมูล Test 10 % 
 
+![image](https://user-images.githubusercontent.com/83268624/160992117-c58bce3f-702d-48fe-a0c6-66d03cf55bd4.png)
 
+![image](https://user-images.githubusercontent.com/83268624/160992163-687efc59-e0a5-4b5e-8b05-0e183da9bad1.png)
 
+พบว่า GRU  มีค่า MSE  = 3.6008    ,  MAE  = 1.765  และหน้าตาการพยากรณ์ราคาที่ได้เป็นไปตามรูปด้านล่างซึ่งมีทิศทางที่ใกล้เคียงกับความเป็นจริงของราคา
+ทว่าความแม่นยำในเรื่องราคานั้นค่อนที่ต่ำกว่าราคาจริง ( Gap price ) และมีประสิทธิภาพด้วยกว่า RNN ประเภทอื่นๆยกเว้น LSTM 
 
-
-
-
-
-
-
+![image](https://user-images.githubusercontent.com/83268624/160992275-e3990aa0-977b-41e1-838f-0e48bc61fd4b.png)
 
 ## RNN Encoder-Decoder
   อีกหนึ่งโมเดลที่ทางกลุ่มเลือกนำมาทดลองคือ RNN Encoder-Decoder architecture เพื่อช่วยแก้ปัญหาจากการใช้แค่ Simple RNN network เนื่องจากการที่ input เป็น sequence และ output เป็น sequence เป็นงานที่ซับซ้อนเกินไปสำหรับแค่ Simple RNN network การใช้ Encoder-Decoder ตัวโมเดลจะถูกแบ่งออกเป็น 2 ส่วนช่วยกันทำงานคือส่วน Encoder ที่รับ input เป็น sequence และส่วน Decoder ที่จะให้ output ออกมาเป็น sequence เช่นกัน ทำให้สามารถทำงานได้ดีกว่า ซึ่งการตั้งค่า parameter ในการทดลองครั้งนี้ กำหนดจำนวน cells สำหรับ encoder และ decoder โมเดลไว้เท่ากับ 20 และเพิ่ม dropout ในส่วน decoder โมเดลเท่ากับ 0.3 ซึ่งเมื่อนำโมเดลที่ train เสร็จเรียบร้อยแล้วมาทดลองทำนายราคาของหุ้น BCH (ในส่วนของ test set) พบว่าได้ผล Mean Squared Error (MSE) : 0.6113 และ Mean Absolute Error : 0.6136
