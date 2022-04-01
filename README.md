@@ -48,8 +48,9 @@ Section3: จะทำการคำนวนค่า MSE และ MAE ขอ
 
 # Network Architecture and Result
 ## Traditional ML - LightGBM 
- ทางทีมได้เลือก LightGBM เนื่องจากเป็นโมเดลที่มีความเร็ว และมีประสิทธิ์ภาพที่สูง จากการใช้ Gradient Boosting หรือ เทคนิคการเรียนรู้ที่จะสร้างโมเดลที่มีความแม่นยำสูง โดยเรียนรู้จากค่าความคลาดเครลื่อนสะสมที่เกิดจากการทำนายของโมเดลที่สร้างก่อนหน้า โดยทางทีมได้กำหนด parameter ต่างๆ ไว้ดังนี้ { 'boosting_type': 'gbdt',  'objective': 'regression', 'metric':'l2', 'num_leaves':10, 'max_depth':5, 'drop_rate ':0.3,  'reg_sqrt':True,  'boost_from_average':True,  'learning_rate': 0.0001, 'verbose': 0, } และตั้งค่าในการ train ไว้เป็น num_boost_round=1000,  early_stopping_rounds=100, verbose_eval=50 เมื่อนำโมเดลที่ Train เสร็จเรียบร้อยแล้วมาทดสอบกับข้อมูล test set (ข้อมูลแยกไว้เพื่อทดสอบโมเดลในตอนสุดท้าย) ได้ผล Mean Squared Error (MSE) : 0.207 และ Mean Absolute Error : 0.335 
-![image](https://user-images.githubusercontent.com/87576892/160876781-285c2681-db7c-476d-87b1-f771f6b692e8.png)
+ ทางทีมได้เลือก LightGBM เนื่องจากเป็นโมเดลที่มีความเร็ว และมีประสิทธิ์ภาพที่สูง จากการใช้ Gradient Boosting หรือ เทคนิคการเรียนรู้ที่จะสร้างโมเดลที่มีความแม่นยำสูง โดยเรียนรู้จากค่าความคลาดเครลื่อนสะสมที่เกิดจากการทำนายของโมเดลที่สร้างก่อนหน้า โดยทางทีมได้กำหนด parameter ต่างๆ ไว้ดังนี้ { 'boosting_type': 'gbdt',  'objective': 'regression', 'metric':'l2', 'num_leaves':10, 'max_depth':5, 'drop_rate ':0.3,  'reg_sqrt':True,  'boost_from_average':True,  'learning_rate': 0.0001, 'verbose': 0, } และตั้งค่าในการ train ไว้เป็น num_boost_round=1000,  early_stopping_rounds=100, verbose_eval=50 เมื่อนำโมเดลที่ Train เสร็จเรียบร้อยแล้วมาทดสอบกับข้อมูล test set (ข้อมูลแยกไว้เพื่อทดสอบโมเดลในตอนสุดท้าย) ได้ผล Mean Squared Error (MSE) : 3.31 และ Mean Absolute Error : 1.51
+![image](https://user-images.githubusercontent.com/87576892/161177914-d0859ad7-0e6b-4998-94f0-9e82006dab0e.png)
+
 
 ## RNN Simple
 โมเดลถัดมาที่ทางทีมเลือกมาทดลองคือ Simple Recurrent Neural Network (RNN Simple) ซึ่งเป็น Network ที่นำ Output จาก State ที่แล้วมาร่วมเป็น Input ด้วย ซึ่งการทำงานจะคล้ายกับการทำงานเป็น Loop เหมือนกับ Neural Network ธรรมดาที่มีหลายๆ ตัว โดยมี Output ต่อกันเป็น Input เข้า Network ใหม่ และเนื่องจาก RNN ใช้ข้อมูลจาก Network ก่อนๆ ทำให้สามารถทำงานได้ดีในข้อมูลแบบ Time Series ซึ่งเหมาะสมกับข้อมูลราคาหุ้น BCH ที่นำมาใช้
